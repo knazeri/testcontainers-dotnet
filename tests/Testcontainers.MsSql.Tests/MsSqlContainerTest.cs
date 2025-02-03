@@ -2,6 +2,7 @@ namespace Testcontainers.MsSql;
 
 public abstract class MsSqlContainerTest : IAsyncLifetime
 {
+    // # --8<-- [start:UseMsSqlContainer]
     private readonly MsSqlContainer _msSqlContainer;
 
     public MsSqlContainerTest(MsSqlContainer msSqlContainer)
@@ -9,7 +10,6 @@ public abstract class MsSqlContainerTest : IAsyncLifetime
         _msSqlContainer = msSqlContainer;
     }
 
-    // # --8<-- [start:UseMsSqlContainer]
     public Task InitializeAsync()
     {
         return _msSqlContainer.StartAsync();
